@@ -1,5 +1,15 @@
-//maven config
 ext {
+    /////////////////////////
+    //android lib
+    compileSdkVersion = 29
+    buildToolsVersion = "29.0.3"
+    minSdkVersion = 17
+    targetSdkVersion = 29
+    versionCode = 1
+    versionName = "1.0"
+
+    /////////////////////////
+    //maven config
     maven_url = 'http://192.168.3.4:8081/repository/zndroid/'
     user_name = "lazy"
     psw = "123456"

@@ -1,4 +1,4 @@
-package com.zndroid;
+package com.test;
 
 import org.junit.Test;
 
