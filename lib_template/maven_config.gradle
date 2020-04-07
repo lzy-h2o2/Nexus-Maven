@@ -1,0 +1,40 @@
+//maven config
+ext {
+    maven_url = 'http://192.168.3.4:8081/repository/zndroid/'
+    user_name = "lazy"
+    psw = "123456"
+
+    groupId = 'com.zndroid'
+    description = "template lib"
+    type = "aar"
+
+    artifactId = 'template'
+    version = '1.0.2'
+}
+
+uploadArchives {
+    def MAVEN_REPO_RELEASE_URL = project.ext.maven_url
+    def NEXUS_USERNAME = project.ext.user_name
+    def NEXUS_PASSWORD = project.ext.psw
+    def DESCRIPTION = project.ext.description
+    def ARTIFACT_ID = project.ext.artifactId
+    def GROUP_ID = project.ext.groupId
+    def VERSION = project.ext.version
+    def TYPE = project.ext.type
+
+    configuration = configurations.archives
+    repositories {
+        mavenDeployer {
+            repository(url: MAVEN_REPO_RELEASE_URL) {
+                authentication(userName: NEXUS_USERNAME, password: NEXUS_PASSWORD)
+            }
+            pom.project {
+                version VERSION
+                artifactId ARTIFACT_ID
+                groupId GROUP_ID
+                packaging TYPE
+                description DESCRIPTION
+            }
+        }
+    }
+}

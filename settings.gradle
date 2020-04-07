@@ -1,2 +1,3 @@
 rootProject.name='Zndroid'
 include ':app'
+include ':lib_template'
