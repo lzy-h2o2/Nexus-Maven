@@ -1,2 +1,2 @@
-# Zndroid
-a common lib pools for android
+# Nexus-Maven
+a example for local maven use nexus
